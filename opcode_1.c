@@ -48,3 +48,54 @@ void pall(monty_stack_t **stack)
 		current = current->next;
 	}
 }
+
+/**
+ * pint - prints the value at the top of the stack, followed by a new line.
+ * @stack: double pointer to the top of the stack.
+ *
+ * Description: If the stack is empty, the function prints an error message
+ *              and exits with a failure status. The error message should
+ *              include the line number, which should be passed to the function
+ *              if available.
+ */
+
+void pint(monty_stack_t **stack)
+{
+	if (*stack == NULL)
+	{
+		/* Replace <line_number> with the appropriate variable if available */
+		fprintf(stderr, "L<line_number>: can't pint, stack empty\n");
+		exit(EXIT_FAILURE);
+	}
+	printf("%d\n", (*stack)->n);
+}
+
+/**
+ * pop - removes the top element of the stack.
+ * @stack: double pointer to the top of the stack.
+ * @line_number: the current line number in the script.
+ *
+ * Description: If the stack is empty, it prints an error message with
+ *              the line number and exits with a failure status.
+ */
+
+void pop(monty_stack_t **stack, unsigned int line_number)
+{
+	monty_stack_t *temp;
+
+	if (*stack == NULL)
+	{
+		fprintf(stderr, "L%d: can't pop an empty stack\n", line_number);
+		exit(EXIT_FAILURE);
+	}
+
+	temp = *stack;
+	*stack = (*stack)->next;
+	if (*stack != NULL)
+	{
+		(*stack)->prev = NULL;
+	}
+	free(temp);
+	/* To avoid unused variable warnings */
+	(void)line_number;
+}

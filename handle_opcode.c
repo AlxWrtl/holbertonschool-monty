@@ -20,8 +20,22 @@ void handle_opcode(
 	{
 		char *num_arg = strtok(NULL, " \n");
 
+		if (!num_arg || !is_valid_integer(num_arg))
+		{
+			fprintf(stderr, "L%d: usage: push integer\n", line_number);
+			exit(EXIT_FAILURE);
+		}
 		push(stack, atoi(num_arg), line_number);
 	}
 	else if (strcmp(opcode, "pall") == 0)
 		pall(stack);
+	else if (strcmp(opcode, "pint") == 0)
+		pint(stack);
+	else if (strcmp(opcode, "pop") == 0)
+		pop(stack, line_number);
+	else
+	{
+		fprintf(stderr, "L%d: unknown instruction %s\n", line_number, opcode);
+		exit(EXIT_FAILURE);
+	}
 }

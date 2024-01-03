@@ -36,11 +36,16 @@ typedef struct instruction_s
 	void (*f)(monty_stack_t **stack, unsigned int line_number);
 } instruction_t;
 
-/* Prototypes */
+/* -------------- Prototypes of opcodes -------- */
+
 void push(monty_stack_t **stack, int n, unsigned int line_number);
 void pall(monty_stack_t **stack);
+void pint(monty_stack_t **stack);
+void pop(monty_stack_t **stack, unsigned int line_number);
 
-void handle_opcode(
-	monty_stack_t **stack, char *opcode, unsigned int line_number);
+/* ---------------- Functions -----------------*/
+
+void handle_opcode(monty_stack_t **stack, char *opcode, unsigned int line_number);
+int is_valid_integer(const char *str);
 
 #endif

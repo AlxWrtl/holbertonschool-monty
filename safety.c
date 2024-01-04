@@ -12,9 +12,19 @@
 
 int is_valid_integer(const char *str)
 {
-	if (!str)
+	int i = 0;
+
+	if (!str || !*str)
 		return (0);
-	for (int i = 0; str[i]; i++)
+
+	if (str[0] == '-')
+	{
+		if (!str[1])
+			return (0);
+		i = 1;
+	}
+
+	for (; str[i]; i++)
 		if (!isdigit(str[i]))
 			return (0);
 	return (1);

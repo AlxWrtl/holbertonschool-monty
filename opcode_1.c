@@ -52,7 +52,7 @@ void pall(monty_stack_t **stack)
 /**
  * pint - prints the value at the top of the stack, followed by a new line.
  * @stack: double pointer to the top of the stack.
- *
+ * @line_number: line number
  * Description: If the stack is empty, the function prints an error message
  *              and exits with a failure status. The error message should
  *              include the line number, which should be passed to the function
@@ -102,7 +102,7 @@ void pop(monty_stack_t **stack, unsigned int line_number)
 /**
  * swap - swaps the top two elements of the stack.
  * @stack: double pointer to the top of the stack.
- *
+ * @line_number: the line number
  * Description: If the stack contains fewer than two elements,
  *              the function prints an error message and exits
  *              with a failure status. The error message should
@@ -110,14 +110,14 @@ void pop(monty_stack_t **stack, unsigned int line_number)
  *              to the function if available.
  */
 
-void swap(monty_stack_t **stack)
+void swap(monty_stack_t **stack, unsigned int line_number)
 {
 	int temp;
 
 	if (*stack == NULL || (*stack)->next == NULL)
 	{
 		/* Replace <line_number> with the appropriate variable if available */
-		fprintf(stderr, "L<line_number>: can't swap, stack too short\n");
+		fprintf(stderr, "L%d: can't swap, stack too short\n", line_number);
 		exit(EXIT_FAILURE);
 	}
 

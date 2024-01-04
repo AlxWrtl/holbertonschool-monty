@@ -30,7 +30,7 @@ void handle_opcode(
 	else if (strcmp(opcode, "pall") == 0)
 		pall(stack);
 	else if (strcmp(opcode, "pint") == 0)
-		pint(stack);
+		pint(stack, line_number);
 	else if (strcmp(opcode, "pop") == 0)
 		pop(stack, line_number);
 	else if (strcmp(opcode, "swap") == 0)

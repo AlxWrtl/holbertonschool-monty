@@ -1,4 +1,4 @@
-#include "main.h"
+#include "monty.h"
 
 /**
  * handle_opcode - Handle Monty opcode.

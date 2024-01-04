@@ -19,3 +19,22 @@ int is_valid_integer(const char *str)
 			return (0);
 	return (1);
 }
+
+/**
+ * free_stack - frees a stack.
+ * @stack: pointer to the first node (top) of the stack.
+ *
+ * Description: Iterates through each node of the stack and
+ *              frees each node to prevent memory leaks.
+ */
+void free_stack(monty_stack_t *stack)
+{
+	monty_stack_t *temp;
+
+	while (stack != NULL)
+	{
+		temp = stack;
+		stack = stack->next;
+		free(temp);
+	}
+}

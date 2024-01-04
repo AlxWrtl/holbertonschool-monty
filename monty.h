@@ -47,5 +47,6 @@ void pop(monty_stack_t **stack, unsigned int line_number);
 
 void handle_opcode(monty_stack_t **stack, char *opcode, unsigned int line_number);
 int is_valid_integer(const char *str);
+void free_stack(monty_stack_t *stack);
 
 #endif

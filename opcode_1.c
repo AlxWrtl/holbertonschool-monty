@@ -99,3 +99,30 @@ void pop(monty_stack_t **stack, unsigned int line_number)
 	/* To avoid unused variable warnings */
 	(void)line_number;
 }
+
+/**
+ * swap - swaps the top two elements of the stack.
+ * @stack: double pointer to the top of the stack.
+ *
+ * Description: If the stack contains fewer than two elements,
+ *              the function prints an error message and exits
+ *              with a failure status. The error message should
+ *              include the line number, which should be passed
+ *              to the function if available.
+ */
+
+void swap(monty_stack_t **stack)
+{
+	int temp;
+
+	if (*stack == NULL || (*stack)->next == NULL)
+	{
+		/* Replace <line_number> with the appropriate variable if available */
+		fprintf(stderr, "L<line_number>: can't swap, stack too short\n");
+		exit(EXIT_FAILURE);
+	}
+
+	temp = (*stack)->n;
+	(*stack)->n = (*stack)->next->n;
+	(*stack)->next->n = temp;
+}

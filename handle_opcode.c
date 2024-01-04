@@ -33,6 +33,12 @@ void handle_opcode(
 		pint(stack);
 	else if (strcmp(opcode, "pop") == 0)
 		pop(stack, line_number);
+	else if (strcmp(opcode, "swap") == 0)
+		swap(stack);
+	else if (strcmp(opcode, "add") == 0)
+		add(stack, line_number);
+	else if (strcmp(opcode, "nop") == 0)
+		nop(stack);
 	else
 	{
 		fprintf(stderr, "L%d: unknown instruction %s\n", line_number, opcode);

@@ -42,6 +42,9 @@ void push(monty_stack_t **stack, int n, unsigned int line_number);
 void pall(monty_stack_t **stack);
 void pint(monty_stack_t **stack);
 void pop(monty_stack_t **stack, unsigned int line_number);
+void swap(monty_stack_t **stack);
+void add(monty_stack_t **stack, unsigned int line_number);
+void nop(monty_stack_t **stack);
 
 /* ---------------- Functions -----------------*/
 

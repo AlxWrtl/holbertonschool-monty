@@ -59,12 +59,11 @@ void pall(monty_stack_t **stack)
  *              if available.
  */
 
-void pint(monty_stack_t **stack)
+void pint(monty_stack_t **stack, unsigned int line_number)
 {
 	if (*stack == NULL)
 	{
-		/* Replace <line_number> with the appropriate variable if available */
-		fprintf(stderr, "L<line_number>: can't pint, stack empty\n");
+		fprintf(stderr, "L%d: can't pint, stack empty\n", line_number);
 		exit(EXIT_FAILURE);
 	}
 	printf("%d\n", (*stack)->n);

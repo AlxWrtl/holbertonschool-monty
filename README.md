@@ -25,8 +25,8 @@ Key learnings from this project include dynamic memory allocation, file operatio
 - `monty.h`: Header file with all function prototypes and data structures.
 - `main.c`: Main entry point for the interpreter.
 - `opcode_functions.c`: Contains functions for each opcode.
-- `stack_functions.c`: Functions related to stack operations.
-- `utility_functions.c`: Helper functions used across the program.
+- `handle_opcode.c`: Functions related to stack operations.
+- `safety.c`: Helper functions used across the program.
 
 ## Installation
 
